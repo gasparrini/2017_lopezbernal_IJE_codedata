@@ -1,5 +1,5 @@
 
-### Updated code from Lopez Bernal et al, IJE 2016
+### Updated R and Stata and data code from Lopez Bernal IJE 2016
 
 --------------------------------------------------------------------------------
 
