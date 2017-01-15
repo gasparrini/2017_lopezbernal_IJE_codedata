@@ -5,13 +5,12 @@
 #     interventions: a tutorial"
 #   J. Lopez Bernal, S. Cummins, A. Gasparrini 
 #   International Journal of Epidemiology - 2016
-#   http://www.ag-myresearch.com/ije2016.html
+#   http://www.ag-myresearch.com/2016_lopezbernal_ije.html
 #
-# Update: 13 June 2016
-# For any problem with this code, please contact antonio.gasparrini@lshtm.ac.uk
-# Please refer to the original code for any copyright issue
-#
-#  See www.ag-myresearch.com for future updates
+# Update: 15 January 2017
+# * an updated version of this code, compatible with future versions of the
+#   software, is available at:
+#   https://github.com/gasparrini/2016_lopezbernal_IJE_codedata
 ################################################################################
 
 # Install packages required for the analysis (uncomment if needed)
