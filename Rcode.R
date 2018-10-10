@@ -4,10 +4,10 @@
 #   "Interrupted time series regression for the evaluation of public health 
 #     interventions: a tutorial"
 #   J. Lopez Bernal, S. Cummins, A. Gasparrini 
-#   International Journal of Epidemiology - 2016
-#   http://www.ag-myresearch.com/2016_lopezbernal_ije.html
+#   International Journal of Epidemiology - 2017
+#   http://www.ag-myresearch.com/2017_lopezbernal_ije.html
 #
-# Update: 15 January 2017
+# Update: 10 October 2018
 # * an updated version of this code, compatible with future versions of the
 #   software, is available at:
 #   https://github.com/gasparrini/2016_lopezbernal_IJE_codedata
