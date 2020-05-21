@@ -7,10 +7,10 @@
 #   International Journal of Epidemiology - 2017
 #   http://www.ag-myresearch.com/2017_lopezbernal_ije.html
 #
-# Update: 10 October 2018
+# Update: 21 May 2020
 # * an updated version of this code, compatible with future versions of the
 #   software, is available at:
-#   https://github.com/gasparrini/2016_lopezbernal_IJE_codedata
+#   https://github.com/gasparrini/2017_lopezbernal_IJE_codedata
 ################################################################################
 
 # Install packages required for the analysis (uncomment if needed)
@@ -195,8 +195,9 @@ lines(1:600/10,pred3b,col=2,lty=2)
 ##################################################################
 
 # add a change-in-slope
-model4 <- glm(aces ~ offset(log(stdpop)) + smokban + time + pmax(time-36,0) +
-  harmonic(month,2,12),family=quasipoisson, data)
+# modelled as interaction between centered time and ban indicator
+model4 <- glm(aces ~ offset(log(stdpop)) + smokban + time +
+  I(time-36,0):smokeban + harmonic(month,2,12),family=quasipoisson, data)
 summary(model4)
 ci.exp(model4)
 
