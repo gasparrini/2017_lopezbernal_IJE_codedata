@@ -7,11 +7,12 @@
 #   International Journal of Epidemiology - 2017
 #   http://www.ag-myresearch.com/2017_lopezbernal_ije.html
 #
-# Update: 21 May 2020
+# Update: 11 Sept 2020
 # * an updated version of this code, compatible with future versions of the
 #   software, is available at:
 #   https://github.com/gasparrini/2017_lopezbernal_IJE_codedata
 ################################################################################
+
 
 # Install packages required for the analysis (uncomment if needed)
 #install.packages("lmtest") ; install.packages("Epi")
@@ -85,7 +86,7 @@ summary(data$rate[data$smokban==1])
 model1 <- glm(aces ~ offset(log(stdpop)) + smokban + time, family=poisson, data)
 summary(model1)
 summary(model1)$dispersion
-ci.exp(model1)
+round(ci.lin(model1,Exp=T),3)
 
 # create a new dataframe with 0.1 time units to improve the graph
 datanew <- data.frame(stdpop=mean(data$stdpop),smokban=rep(c(0,1),c(360,240)),
@@ -131,7 +132,7 @@ model2 <- glm(aces ~ offset(log(stdpop)) + smokban + time, family=quasipoisson,
   data)
 summary(model2)
 summary(model2)$dispersion
-ci.exp(model2)
+round(ci.lin(model2,Exp=T),3)
 
 #b) Model checking and autocorrelation
 
@@ -154,9 +155,12 @@ model3 <- glm(aces ~ offset(log(stdpop)) + smokban + time +
   harmonic(month,2,12), family=quasipoisson, data)
 summary(model3)
 summary(model3)$dispersion
-ci.exp(model3)
+round(ci.lin(model3,Exp=T),3)
 
-# trend
+# EFFECTS
+ci.lin(model3,Exp=T)["smokban",5:7]
+
+# TREND
 exp(coef(model3)["time"]*12)
 
 # We again check the model and autocorrelation functions
@@ -195,11 +199,11 @@ lines(1:600/10,pred3b,col=2,lty=2)
 ##################################################################
 
 # add a change-in-slope
-# modelled as interaction between centered time and ban indicator
-model4 <- glm(aces ~ offset(log(stdpop)) + smokban + time +
-  I(time-36):smokban + harmonic(month,2,12),family=quasipoisson, data)
+# we parameterize it as an interaction between centered time and ban indicator
+model4 <- glm(aces ~ offset(log(stdpop)) + smokban + time + I(time-36):smokban +
+    harmonic(month,2,12),  family=quasipoisson, data)
 summary(model4)
-ci.exp(model4)
+round(ci.lin(model4,Exp=T),3)
 
 # predict and plot the 'deseasonalised' trend
 # compare it with the step-change only model

@@ -7,6 +7,8 @@ A tutorial on the use of interrupted time series (ITS) analysis in public health
 
 Lopez Bernal J, Cummins S, Gasparrini. Interrupted time series regression for the evaluation of public health interventions: a tutorial. *International Journal of Epidemiology*. 2017;46(1):348-355. [[freely available here](http://www.ag-myresearch.com/2017_lopezbernal_ije.html)]
 
+A correction has been issues [[freely available here](http://www.ag-myresearch.com/2017_lopezbernal_ije.html)], including changes to the original model definition and R code.
+
 --------------------------------------------------------------------------------
 
 The material:
